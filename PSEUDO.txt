@@ -1,0 +1,7 @@
+What do we want our app to do?
+-User inputs the state of the parks they desire to go to
+-display national park options for that selected state
+-Once they select the park they want to go 
+-they input location to get directions to the park with waze api
+-navigation/directions will be generated once the user input is submitted in a form.
+
