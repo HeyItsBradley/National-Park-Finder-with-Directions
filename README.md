@@ -4,6 +4,30 @@
 
 This project is created to link waze directions from current location to a National Park of your choosing in the state of your choice.  
 
+## Acceptance Criteria for deployed page
+
+-Use CSS Bootstrap  
+-Deployed on GitHub Pages    
+-Accept and respond to user input  
+-Use at least two server-side APIs  
+-use client side storage to store persistent data  
+-must use modals not (JS alers, prompts or confirms)
+-must add project to your portfolio already created  
+
+
+## Presentation Requirements  
+-one minute elevator pitch of description of web site
+-motivation for the project?
+-what is your user story?
+-process:
+    -what technologies used
+    -tasks and roles broken down and assigned
+    -Challenges encountered?
+-demo the project
+-directions for future development of the app
+-link to deployed application and GitHub repo
+
+
 ## Description
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:  
