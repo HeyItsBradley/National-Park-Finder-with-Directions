@@ -1,11 +1,13 @@
-# Name of project here 
+# National Parks with directions? 
 
 ## User Story   
 
-This project is created to link waze directions from current location to a National Park of your choosing in the state of your choice.  
+As an avid national park goer, I want to to be able to use one site to get directions and choose the park i'm going too.
 
 ## Acceptance Criteria for deployed page
-
+*GIVEN
+*WHEN
+*THEN
 -Use CSS Bootstrap  
 -Deployed on GitHub Pages    
 -Accept and respond to user input  
