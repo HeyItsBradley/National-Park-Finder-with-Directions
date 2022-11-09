@@ -1,69 +1,73 @@
-# National Parks with directions? 
+# National Park Finder with Directions
 
-## User Story   
+## User Story
 
-As an avid national park goer, I want to to be able to use one site to get directions and choose the park i'm going too.
+As an avid national park goer, I want to to be able to select a state I desire to travel to. Then I would like to select a national park and get directions to that park.
 
 ## Acceptance Criteria for deployed page
-*GIVEN
-*WHEN
-*THEN
+
+*GIVEN when I'm able to select the state I want to travel in.  
+*Then I am presented with a list of parks in that state.  
+*THEN I'm able to select the park I want to go too.  
+*Given there is a link to find directions to that park.  
+\*Then I am presented with directions to the chosen park.
+
+## Technical criteria
+
 -Use CSS Bootstrap  
--Deployed on GitHub Pages    
+-Deployed on GitHub Pages  
 -Accept and respond to user input  
 -Use at least two server-side APIs  
 -use client side storage to store persistent data  
 -must use modals not (JS alers, prompts or confirms)
--must add project to your portfolio already created  
+-must add project to your portfolio already created
 
+## Presentation Requirements
 
-## Presentation Requirements  
 -one minute elevator pitch of description of web site
 -motivation for the project?
 -what is your user story?
 -process:
-    -what technologies used
-    -tasks and roles broken down and assigned
-    -Challenges encountered?
+-what technologies used
+-tasks and roles broken down and assigned
+-Challenges encountered?
 -demo the project
 -directions for future development of the app
 -link to deployed application and GitHub repo
 
-
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:  
+Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
 - What was your motivation?  
-    -- The ability to go to one page and see all National Parks in your own state.  
-    - Directions already to location easily accessible for getting there.  
+   -- The ability to go to one page and see all National Parks in your own state.
+  - Directions already to location easily accessible for getting there.
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")  
-    -create a site for accessibility to parks with ways to get there faster.  
+   -create a site for accessibility to parks with ways to get there faster.
 - What problem does it solve?  
-    -It stops users from having to deploy multiple tabs for one task.   
+   -It stops users from having to deploy multiple tabs for one task.
 - What did you learn?  
-    -will fill in once we collaborate and PSUEDO code to get a starting point.  
+   -will fill in once we collaborate and PSUEDO code to get a starting point.
 
-## Installation  
+## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.  
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
-## Usage  
-   
-    Will add photo of deployed site  
-    will add link to deployed site  
+## Usage
 
-## Credits  
+    Will add photo of deployed site
+    will add link to deployed site
 
-List your collaborators, if any, with links to their GitHub profiles.  
+## Credits
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.  
+List your collaborators, if any, with links to their GitHub profiles.
 
-If you followed tutorials, include links to those here as well.  
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-## License  
+If you followed tutorials, include links to those here as well.
 
-Please refer to LICENSE.  
+## License
+
+Please refer to LICENSE.
 
 ---
-
