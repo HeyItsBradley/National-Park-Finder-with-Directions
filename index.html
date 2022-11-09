@@ -29,16 +29,67 @@
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown
+          Select State:
         </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        <ul class="dropdown-menu selectState">
+          <li><a class="dropdown-item" href="#">al</a></li>
+          <li><a class="dropdown-item" href="#">ak</a></li>
+          <li><a class="dropdown-item" href="#">az</a></li>
+          <li><a class="dropdown-item" href="#">ar</a></li>
+
+          <li><a class="dropdown-item" href="#">ca</a></li>
+          <li><a class="dropdown-item" href="#">co</a></li>
+          <li><a class="dropdown-item" href="#">ct</a></li>
+          <li><a class="dropdown-item" href="#">de</a></li>
+
+          <li><a class="dropdown-item" href="#">fl</a></li>
+          <li><a class="dropdown-item" href="#">ga</a></li>
+
+          <li><a class="dropdown-item" href="#">hi</a></li>
+          <li><a class="dropdown-item" href="#">id</a></li>
+          <li><a class="dropdown-item" href="#">il</a></li>
+          <li><a class="dropdown-item" href="#">in</a></li>
+          <li><a class="dropdown-item" href="#">ia</a></li>
+          <li><a class="dropdown-item" href="#">ks</a></li>
+          <li><a class="dropdown-item" href="#">ky</a></li>
+          <li><a class="dropdown-item" href="#">la</a></li>
+          <li><a class="dropdown-item" href="#">me</a></li>
+          <li><a class="dropdown-item" href="#">md</a></li>
+          <li><a class="dropdown-item" href="#">ma</a></li>
+          <li><a class="dropdown-item" href="#">mi</a></li>
+          <li><a class="dropdown-item" href="#">mn</a></li>
+          <li><a class="dropdown-item" href="#">ms</a></li>
+          <li><a class="dropdown-item" href="#">mo</a></li>
+          <li><a class="dropdown-item" href="#">mt</a></li>
+          <li><a class="dropdown-item" href="#">ne</a></li>
+          <li><a class="dropdown-item" href="#">nv</a></li>
+          <li><a class="dropdown-item" href="#">nh</a></li>
+          <li><a class="dropdown-item" href="#">nj</a></li>
+          <li><a class="dropdown-item" href="#">nm</a></li>
+          <li><a class="dropdown-item" href="#">ny</a></li>
+          <li><a class="dropdown-item" href="#">nc</a></li>
+          <li><a class="dropdown-item" href="#">nd</a></li>
+
+          <li><a class="dropdown-item" href="#">oh</a></li>
+          <li><a class="dropdown-item" href="#">ok</a></li>
+          <li><a class="dropdown-item" href="#">or</a></li>
+          <li><a class="dropdown-item" href="#">pa</a></li>
+
+          <li><a class="dropdown-item" href="#">ri</a></li>
+          <li><a class="dropdown-item" href="#">sc</a></li>
+          <li><a class="dropdown-item" href="#">sd</a></li>
+          <li><a class="dropdown-item" href="#">tn</a></li>
+          <li><a class="dropdown-item" href="#">tx</a></li>
+          <li><a class="dropdown-item" href="#">ut</a></li>
+          <li><a class="dropdown-item" href="#">vt</a></li>
+          <li><a class="dropdown-item" href="#">va</a></li>
+          <li><a class="dropdown-item" href="#">wa</a></li>
+          <li><a class="dropdown-item" href="#">wv</a></li>
+          <li><a class="dropdown-item" href="#">wi</a></li>
+          <li><a class="dropdown-item" href="#">wy</a></li>
         </ul>
         <input
+          id="stateInput"
           type="text"
           class="form-control"
           aria-label="Text input with dropdown button"
@@ -47,19 +98,20 @@
 
       <div class="row input-group mb-4 col-4">
         <input
+          id="parkInput"
           type="text"
           class="form-control"
           aria-label="Text input with dropdown button"
         />
         <button
-          class="btn btn-outline-secondary dropdown-toggle"
+          class="btn btn-outline-secondary dropdown-toggle col-3"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown
+          Parks:
         </button>
-        <ul class="dropdown-menu dropdown-menu-end">
+        <ul class="dropdown-menu dropdown-menu-end col-3 selectPark">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -67,38 +119,23 @@
           <li><a class="dropdown-item" href="#">Separated link</a></li>
         </ul>
       </div>
-
+      <!-- start of the third -->
       <div class="row input-group mb-4 col-4">
-        <button
-          class="btn btn-outline-secondary dropdown-toggle"
-          type="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Dropdown
-        </button>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action before</a></li>
-          <li><a class="dropdown-item" href="#">Another action before</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Separated link</a></li>
-        </ul>
-
         <input
+          id="activitiesInput"
           type="text"
           class="form-control"
-          aria-label="Text input with 2 dropdown buttons"
+          aria-label="Text input with dropdown button"
         />
         <button
-          class="btn btn-outline-secondary dropdown-toggle"
+          class="btn btn-outline-secondary dropdown-toggle col-3"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Dropdown
+          Activities:
         </button>
-        <ul class="dropdown-menu dropdown-menu-end">
+        <ul class="dropdown-menu dropdown-menu-end selectActivities">
           <li><a class="dropdown-item" href="#">Action</a></li>
           <li><a class="dropdown-item" href="#">Another action</a></li>
           <li><a class="dropdown-item" href="#">Something else here</a></li>
@@ -107,7 +144,12 @@
         </ul>
       </div>
     </div>
-
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
