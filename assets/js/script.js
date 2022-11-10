@@ -2,6 +2,8 @@ var parkCode = "";
 var allParkCodes = [];
 var parksInState = [];
 var selectedParkName = "";
+var lat = "";
+var long = "";
 
 $(document).ready(function () {
   $(".selectState li").on("click", function () {
@@ -66,6 +68,14 @@ $(document).ready(function () {
           var cardImg = (data.data[parkIndex].images[0].url);
           $(".card-img-top").attr("src", cardImg);
           console.log(data.data[parkIndex]);
+          //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
+          lat = (data.data[parkIndex].latitude);
+          console.log(lat)
+          long = (data.data[parkIndex].longitude);
+          console.log(long);
+        
+
+          
           // fetch(
           //   // "https://developer.nps.gov/api/v1/?parkCode=" +
           //   //   parkCode +
@@ -81,6 +91,14 @@ $(document).ready(function () {
         });
       });
   });
+
+  var wazeUrl = 
+$("#letsGoBtn").on("click", function (){
+  $(this).attr("href","https://www.waze.com/ul?ll=" + lat + "%2C" + long + "&navigate=yes&zoom=17");
+})
+
+
+
 });
 
 // waze
