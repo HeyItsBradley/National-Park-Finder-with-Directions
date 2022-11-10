@@ -42,26 +42,32 @@ $(document).ready(function () {
         console.log(allParkCodes);
         console.log(parksInState);
 
-        $(".selectPark a").on("click", function () {
-          console.log("second click is working");
-          $("#activitiesUl").empty();
-          $("#parkInput").val($(this).text());
-          var parkText = this.id;
-          console.log(parkText);
-          var parkIndex = parkText.replace(/\D/g, "");
-          console.log(parkIndex);
-          fetch(
-            "https://developer.nps.gov/api/v1/thingstodo?stateCode=" +
-              parkcode +
-              "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
-          )
-            .then(function (response) {
-              return response.json();
-            })
-            .then(function (data) {
-              console.log(data);
-            });
-        });
+        // this is a future function to link activities
+
+        // $(".selectPark a").on("click", function () {
+        //   console.log("second click is working");
+        //   $("#activitiesUl").empty();
+        //   $("#parkInput").val($(this).text());
+        //   var parkText = this.id;
+        //   console.log(parkText);
+        //   // Pulls out number in a string, the index
+        //   var parkIndex = parkText.replace(/\D/g, "");
+        //   console.log(parkIndex);
+        //   // pulled the index to meet the park code
+        //   // var parkCode = allParkCodes[parkIndex];
+        //   // console.log(parkCode);
+
+        //   fetch(
+        //     "https://developer.nps.gov/api/v1/thingstodo?stateCode=" +
+        //       parkCode +
+        //       "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
+        //   )
+        //     .then(function (response) {
+        //       return response.json();
+        //     })
+        //     .then(function (data) {
+        //       console.log(data);
+        //     });
       });
   });
 });
