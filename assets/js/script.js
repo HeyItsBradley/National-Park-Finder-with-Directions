@@ -50,19 +50,22 @@ $(document).ready(function () {
           $("#activitiesUl").empty();
           $("#parkInput").val($(this).text());
           var parkText = this.id;
-        selectedParkName = $(this).text()
-        console.log(selectedParkName)
-        $(".card-title").text(selectedParkName)
+          selectedParkName = $(this).text();
+          console.log(selectedParkName);
+          $(".card-title").text(selectedParkName);
           console.log(parkText);
           // Pulls out number in a string, the index
           var parkIndex = parkText.replace(/\D/g, "");
           console.log(parkIndex);
           // pulled the index to meet the park code
           var parkCode = allParkCodes[parkIndex];
-          console.log(parkCode);
-        console.log(data.data[parkIndex].description);
-        $(".card-text").text(data.data[parkIndex].description);
-
+          console.log(data.data[parkIndex].images[0].url);
+          console.log(data.data[parkIndex].description);
+          $(".card-text").text(data.data[parkIndex].description);
+          //We are creating a variable to denote the relative path to the image url and dynamically inserted it to our src variable
+          var cardImg = (data.data[parkIndex].images[0].url);
+          $(".card-img-top").attr("src", cardImg);
+          console.log(data.data[parkIndex]);
           // fetch(
           //   // "https://developer.nps.gov/api/v1/?parkCode=" +
           //   //   parkCode +
@@ -75,9 +78,9 @@ $(document).ready(function () {
           //   .then(function (data) {
           //     console.log(data);
           //   });
+        });
       });
   });
-});
 });
 
 // waze
