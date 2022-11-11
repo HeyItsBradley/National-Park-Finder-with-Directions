@@ -1,0 +1,25 @@
+div img {
+  max-width: 30vw;
+  max-height: auto;
+  min-width: auto;
+  max-height: 30vw;
+  padding: 2vw;
+}
+
+body {
+  background-image: url(./foggy-background.avif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#parkCard {
+  background-color: rgba(255, 255, 255, 0.486);
+  border-radius: 5%;
+}
+
+aside div button{
+    background-color: dra;
+}
+
+/* data-bs-toggle="modal" data-bs-target="#exampleModal" */

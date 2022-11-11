@@ -5,3 +5,31 @@ What do we want our app to do?
 -they input location to get directions to the park with waze api
 -navigation/directions will be generated once the user input is submitted in a form.
 
+//future dev work, activities column
+<!-- start of the third -->
+      <!-- <div class="row input-group mb-4 col-4">
+        <input
+          id="activitiesInput"
+          type="text"
+          class="form-control"
+          aria-label="Text input with dropdown button"
+        />
+        <button
+          class="btn btn-outline-secondary dropdown-toggle col-3"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Activities:
+        </button>
+        <ul
+          id="activitiesUl"
+          class="dropdown-menu dropdown-menu-end selectActivities"
+        >
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Separated link</a></li>
+        </ul>
+      </div> -->

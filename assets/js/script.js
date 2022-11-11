@@ -65,17 +65,15 @@ $(document).ready(function () {
           console.log(data.data[parkIndex].description);
           $(".card-text").text(data.data[parkIndex].description);
           //We are creating a variable to denote the relative path to the image url and dynamically inserted it to our src variable
-          var cardImg = (data.data[parkIndex].images[0].url);
+          var cardImg = data.data[parkIndex].images[0].url;
           $(".card-img-top").attr("src", cardImg);
           console.log(data.data[parkIndex]);
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
-          lat = (data.data[parkIndex].latitude);
-          console.log(lat)
-          long = (data.data[parkIndex].longitude);
+          lat = data.data[parkIndex].latitude;
+          console.log(lat);
+          long = data.data[parkIndex].longitude;
           console.log(long);
-        
 
-          
           // fetch(
           //   // "https://developer.nps.gov/api/v1/?parkCode=" +
           //   //   parkCode +
@@ -92,13 +90,29 @@ $(document).ready(function () {
       });
   });
 
-  var wazeUrl = 
-$("#letsGoBtn").on("click", function (){
-  $(this).attr("href","https://www.waze.com/ul?ll=" + lat + "%2C" + long + "&navigate=yes&zoom=17");
-})
+  // var wazeUrl =
 
+  $("#letsGoBtn").on("click", function () {
+    //if .selectpark is ='' then set attr of model to button
 
-
+    if (selectedParkName.length === 0) {
+      e.preventDefault();
+      console.log("hello");
+      return;
+    } else {
+      console.log("else statement is runnnign");
+      console.log(this);
+      $(this).attr("target", "_blank");
+      $(this).attr(
+        "href",
+        "https://www.waze.com/ul?ll=" +
+          lat +
+          "%2C" +
+          long +
+          "&navigate=yes&zoom=17"
+      );
+    }
+  });
 });
 
 // waze
