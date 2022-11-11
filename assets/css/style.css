@@ -18,8 +18,15 @@ body {
   border-radius: 5%;
 }
 
-aside div button{
-    background-color: dra;
+aside div button {
+  background-color: dra;
 }
 
-/* data-bs-toggle="modal" data-bs-target="#exampleModal" */
+.navbar {
+  background-color: rgba(255, 255, 255, 0.555);
+}
+
+.dropdown-menu {
+  overflow-y: scroll;
+  max-height: 10vw;
+}

@@ -1,3 +1,4 @@
+//VARIABLE DECLERATIONS
 var parkCode = "";
 var allParkCodes = [];
 var parksInState = [];
@@ -5,18 +6,19 @@ var selectedParkName = "";
 var lat = "";
 var long = "";
 
+//EVENT LISTNERS
+
 $(document).ready(function () {
+  //this will listen for clicks on state and parks and return data from selected items
   $(".selectState li").on("click", function () {
     //delete all lis in select park ul
     $("#parkUl").empty();
 
-    console.log($(this).text());
+    //state input field gets set to clicked state
     $("#stateInput").val($(this).text());
-    //once on click has started
-    //take this.text value(the state)
-    //plug that value into the featch function paramater(in the link)
-    //take the data and make new lis under the park dropdown ul
+    //store selected state name in var
     var selectedState = $(this).text();
+    //fetching data on the selected state using API call
     fetch(
       "https://developer.nps.gov/api/v1/parks?&stateCode=" +
         selectedState +
@@ -27,83 +29,63 @@ $(document).ready(function () {
       })
       .then(function (data) {
         console.log(data);
+        //for loop to create new li elements for the parks dropdown menu
         for (var i = 0; i < data.total; i++) {
+          //declaring variables for createing elements
           var createLi = document.createElement("li");
           var createA = document.createElement("a");
           var selectPark = document.getElementById("parkUl");
           createA.setAttribute("class", "dropdown-item");
           createA.setAttribute("href", "#");
           createA.setAttribute("id", "parkIndex" + [i]);
-
+          //setting text content and appending
           createA.textContent = data.data[i].name;
           createLi.appendChild(createA);
           selectPark.appendChild(createLi);
-
+          //pushing park code and parks into an array
           allParkCodes.push(data.data[i].parkCode);
           parksInState.push(data.data[i].name);
         }
-        console.log(allParkCodes);
-        console.log(parksInState);
-
-        // this is a future function to link activities
-
+        //when user clicks on a park then
         $(".selectPark a").on("click", function () {
-          console.log("second click is working");
-          $("#activitiesUl").empty();
+          //park input fields becomes selected park
           $("#parkInput").val($(this).text());
+          //create var parktext to be set to the park name
           var parkText = this.id;
+          //selected park name gets set to clicked on text
           selectedParkName = $(this).text();
-          console.log(selectedParkName);
+          //updates card title to become selected park
           $(".card-title").text(selectedParkName);
-          console.log(parkText);
+
           // Pulls out number in a string, the index
           var parkIndex = parkText.replace(/\D/g, "");
-          console.log(parkIndex);
-          // pulled the index to meet the park code
-          var parkCode = allParkCodes[parkIndex];
-          console.log(data.data[parkIndex].images[0].url);
-          console.log(data.data[parkIndex].description);
+          //card text gets set to describtion of selected park
           $(".card-text").text(data.data[parkIndex].description);
           //We are creating a variable to denote the relative path to the image url and dynamically inserted it to our src variable
           var cardImg = data.data[parkIndex].images[0].url;
-          $(".card-img-top").attr("src", cardImg);
-          console.log(data.data[parkIndex]);
+          //card image gets set to selcted parks image
+          $(".cardImage").attr("src", cardImg);
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
           lat = data.data[parkIndex].latitude;
-          console.log(lat);
           long = data.data[parkIndex].longitude;
-          console.log(long);
-
-          // fetch(
-          //   // "https://developer.nps.gov/api/v1/?parkCode=" +
-          //   //   parkCode +
-          //   //   "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
-          //   "https://developer.nps.gov/api/v1/parks?parkCodes=" + parkCode + "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
-          // )
-          //   .then(function (response) {
-          //     return response.json();
-          //   })
-          //   .then(function (data) {
-          //     console.log(data);
-          //   });
         });
       });
   });
 
-  // var wazeUrl =
-
+  // listners for click on lets go button and opens new tap with directions to selected waypoint
   $("#letsGoBtn").on("click", function (e) {
-    //if .selectpark is ='' then set attr of model to button
+    //checks if no park was selected, if so,
+    //prevents default refresh and presents error modal
 
     if (selectedParkName.length === 0) {
       e.preventDefault();
       $("#exampleModal").modal("show");
       console.log("hello");
-
       return;
+      //if user has selected park,
+      //them goes to new page
+      //displays directions to park using waze api
     } else {
-      console.log("else statement is runnnign");
-      console.log(this);
       $(this).attr("target", "_blank");
       $(this).attr(
         "href",
@@ -116,5 +98,3 @@ $(document).ready(function () {
     }
   });
 });
-
-// waze

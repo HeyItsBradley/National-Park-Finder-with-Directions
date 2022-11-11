@@ -33,3 +33,20 @@ What do we want our app to do?
           <li><a class="dropdown-item" href="#">Separated link</a></li>
         </ul>
       </div> -->
+
+      
+          // fetch(
+          //   // "https://developer.nps.gov/api/v1/?parkCode=" +
+          //   //   parkCode +
+          //   //   "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
+          //   "https://developer.nps.gov/api/v1/parks?parkCodes=" + parkCode + "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
+          // )
+          //   .then(function (response) {
+          //     return response.json();
+          //   })
+          //   .then(function (data) {
+          //     console.log(data);
+          //   });
+
+          // pulled the index to meet the park code
+          var parkCode = allParkCodes[parkIndex];
