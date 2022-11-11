@@ -92,12 +92,14 @@ $(document).ready(function () {
 
   // var wazeUrl =
 
-  $("#letsGoBtn").on("click", function () {
+  $("#letsGoBtn").on("click", function (e) {
     //if .selectpark is ='' then set attr of model to button
 
     if (selectedParkName.length === 0) {
       e.preventDefault();
+      $("#exampleModal").modal("show");
       console.log("hello");
+
       return;
     } else {
       console.log("else statement is runnnign");
