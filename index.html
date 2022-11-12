@@ -17,7 +17,7 @@
 
   <body>
     <!-- As a heading -->
-    <nav class="navbar bg-light">
+    <nav class="navbar">
       <span class="navbar-brand mb-0 h1">National Parks Search</span>
     </nav>
     <br />
@@ -126,15 +126,13 @@
           >
             <img
               src="./assets/photo-1535044243240-144dc3ae56a5.avif"
-              class=""
+              class="cardImage"
               alt="image of park selected"
             />
             <div class="card-body">
               <h5 class="card-title">National Park</h5>
               <p class="card-text"></p>
-              <a href=""  id="letsGoBtn" class="btn btn-primary" 
-                >Let's Go!</a
-              >
+              <a href="" id="letsGoBtn" class="btn btn-primary">Let's Go!</a>
             </div>
           </div>
         </article>
@@ -151,25 +149,17 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Error</h1>
             <button
               type="button"
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">...</div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
             >
-              Close
+              X
             </button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
+          <div class="modal-body">Please select state and park !</div>
         </div>
       </div>
     </div>
