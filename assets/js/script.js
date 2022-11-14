@@ -6,6 +6,7 @@ var selectedParkName = "";
 var lat = "";
 var long = "";
 var pastSearchesArr = [];
+var buttonIndex = 0;
 //EVENT LISTNERS
 
 $(document).ready(function () {
@@ -68,7 +69,17 @@ $(document).ready(function () {
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
           lat = data.data[parkIndex].latitude;
           long = data.data[parkIndex].longitude;
-          pastSearchesArr.push(selectedParkName);
+          var searchData = {
+            name: selectedParkName,
+            description: data.data[parkIndex].description,
+            picture: data.data[parkIndex].images[0].url,
+            lat: data.data[parkIndex].latitude,
+            lon: data.data[parkIndex].longitude,
+          };
+          pastSearchesArr.push(searchData);
+          pastSearchesArr = pastSearchesArr.map(function (obj, i) {
+            return { ...obj, index: i };
+          });
 
           localStorage.setItem("PastSearches", JSON.stringify(pastSearchesArr));
 
@@ -78,10 +89,13 @@ $(document).ready(function () {
             "my-2 col-12 btn btn-primary" + selectedParkName;
           createHistoryButton.id = "pastSearchButton";
           createHistoryButton.textContent = selectedParkName;
+          createHistoryButton.setAttribute("index", buttonIndex);
 
           document
             .getElementById("pastSearches")
             .appendChild(createHistoryButton);
+
+          buttonIndex++;
         });
       });
   });
@@ -92,10 +106,10 @@ $(document).ready(function () {
     $("#parkUl").empty();
 
     //state input field gets set to clicked state
-    $("#stateInput").val($(this).text());
-    console.log($(this).text());
+    $("#stateInput").val(pastSearchesArr[0].state);
+
     //store selected state name in var
-    var selectedState = $(this).text();
+    var selectedState = localStorage.getItem.name;
     //fetching data on the selected state using API call
     fetch(
       "https://developer.nps.gov/api/v1/parks?&stateCode=" +
@@ -150,27 +164,34 @@ $(document).ready(function () {
       });
   }
   //Listeners for clicks on previous search buttons
-  $(document).on("click", "#pastSearchButton", handleHistoryClick);
-//when run, will fetch localstorage items and append them as buttons in previous searches sections
+  $(document).on("click", "#pastSearchButton", function () {
+    console.log($(this).val());
+  });
+  //when run, will fetch localstorage items and append them as buttons in previous searches sections
   function getLocalStorage() {
+    var KeyName = window.localStorage.key(0);
+    console.log(JSON.parse(window.localStorage.getItem("PastSearches")));
     if (JSON.parse(localStorage.getItem("PastSearches")) !== null) {
       pastSearchesArr = pastSearchesArr.concat(
         JSON.parse(localStorage.getItem("PastSearches"))
       );
     }
+    console.log(pastSearchesArr);
 
     for (let i = 0; i < pastSearchesArr.length; i++) {
       var createHistoryButton = document.createElement("button");
       createHistoryButton.type = "submit";
-      createHistoryButton.className =
-        "my-2 col-12 btn btn-primary" + pastSearchesArr[i];
+      createHistoryButton.className = "my-2 col-12 btn btn-primary";
       createHistoryButton.id = "pastSearchButton";
-      createHistoryButton.textContent = pastSearchesArr[i];
+      createHistoryButton.value = pastSearchesArr[i].index;
+
+      //want text conetnt to be localstorage,getitem[i].[1]
+      createHistoryButton.textContent = pastSearchesArr[i].name;
 
       document.getElementById("pastSearches").appendChild(createHistoryButton);
     }
   }
-//on page load, runs this functions
+  //on page load, runs this functions
   getLocalStorage();
 
   // listners for click on lets go button and opens new tap with directions to selected waypoint
