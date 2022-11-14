@@ -4,7 +4,7 @@ var allParkCodes = [];
 var parksInState = [];
 var selectedParkName = "";
 var lat = "";
-var long = "";
+var lon = "";
 var pastSearchesArr = [];
 var buttonIndex = 0;
 //EVENT LISTNERS
@@ -68,7 +68,7 @@ $(document).ready(function () {
           $(".cardImage").attr("src", cardImg);
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
           lat = data.data[parkIndex].latitude;
-          long = data.data[parkIndex].longitude;
+          lon = data.data[parkIndex].longitude;
           var searchData = {
             name: selectedParkName,
             description: data.data[parkIndex].description,
@@ -121,7 +121,6 @@ $(document).ready(function () {
   });
   //when run, will fetch localstorage items and append them as buttons in previous searches sections
   function getLocalStorage() {
-    var KeyName = window.localStorage.key(0);
     console.log(JSON.parse(window.localStorage.getItem("PastSearches")));
     if (JSON.parse(localStorage.getItem("PastSearches")) !== null) {
       pastSearchesArr = pastSearchesArr.concat(
