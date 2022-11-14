@@ -47,7 +47,8 @@ p {
 }
 
 #button-color,
-#letsGoBtn {
+#letsGoBtn,
+#pastSearchButton {
   background-color: rgba(119, 54, 24, 0.644);
   border-color: rgba(255, 255, 255, 0.65);
 }

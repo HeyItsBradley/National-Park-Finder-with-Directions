@@ -85,8 +85,7 @@ $(document).ready(function () {
 
           var createHistoryButton = document.createElement("button");
           createHistoryButton.type = "submit";
-          createHistoryButton.className =
-            "my-2 col-12 btn btn-primary" + selectedParkName;
+          createHistoryButton.className = "my-2 col-12 btn btn-primary";
           createHistoryButton.id = "pastSearchButton";
           createHistoryButton.textContent = selectedParkName;
           createHistoryButton.setAttribute("index", buttonIndex);
@@ -105,8 +104,10 @@ $(document).ready(function () {
   $(document).on("click", "#pastSearchButton", function () {
     console.log($(this).val());
     var selectedIndex = $(this).val();
-    console.log(pastSearchesArr[selectedIndex].description);
+
     pastSearchesArr[0].name;
+
+    console.log(pastSearchesArr[selectedIndex]);
 
     $(".card-title").text(pastSearchesArr[selectedIndex].name);
 
