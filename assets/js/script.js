@@ -5,7 +5,8 @@ var parksInState = [];
 var selectedParkName = "";
 var lat = "";
 var long = "";
-
+var pastSearchesArr = [];
+var buttonIndex = 0;
 //EVENT LISTNERS
 
 $(document).ready(function () {
@@ -43,8 +44,8 @@ $(document).ready(function () {
           createLi.appendChild(createA);
           selectPark.appendChild(createLi);
           //pushing park code and parks into an array
-          allParkCodes.push(data.data[i].parkCode);
-          parksInState.push(data.data[i].name);
+          // allParkCodes.push(data.data[i].parkCode);
+          // parksInState.push(data.data[i].name);
         }
         //when user clicks on a park then
         $(".selectPark a").on("click", function () {
@@ -68,16 +69,90 @@ $(document).ready(function () {
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
           lat = data.data[parkIndex].latitude;
           long = data.data[parkIndex].longitude;
+          var searchData = {
+            name: selectedParkName,
+            description: data.data[parkIndex].description,
+            picture: data.data[parkIndex].images[0].url,
+            lat: data.data[parkIndex].latitude,
+            lon: data.data[parkIndex].longitude,
+          };
+          pastSearchesArr.push(searchData);
+          pastSearchesArr = pastSearchesArr.map(function (obj, i) {
+            return { ...obj, index: i };
+          });
+
+          localStorage.setItem("PastSearches", JSON.stringify(pastSearchesArr));
+
+          var createHistoryButton = document.createElement("button");
+          createHistoryButton.type = "submit";
+          createHistoryButton.className = "my-2 col-12 btn btn-primary";
+          createHistoryButton.id = "pastSearchButton";
+          createHistoryButton.textContent = selectedParkName;
+          createHistoryButton.setAttribute("index", buttonIndex);
+
+          document
+            .getElementById("pastSearches")
+            .appendChild(createHistoryButton);
+
+          buttonIndex++;
         });
       });
   });
+  //this will run when a past search is clicked on and fetch and append the info
+
+  //Listeners for clicks on previous search buttons
+  $(document).on("click", "#pastSearchButton", function () {
+    console.log($(this).val());
+    var selectedIndex = $(this).val();
+
+    pastSearchesArr[0].name;
+
+    console.log(pastSearchesArr[selectedIndex]);
+
+    $(".card-title").text(pastSearchesArr[selectedIndex].name);
+
+    $(".card-text").text(pastSearchesArr[selectedIndex].description);
+    $(".cardImage").attr("src", pastSearchesArr[selectedIndex].picture);
+    lat = pastSearchesArr[selectedIndex].lat;
+    lon = pastSearchesArr[selectedIndex].lon;
+    $("#parkInput").val(pastSearchesArr[selectedIndex].name);
+
+    console.log(lat + "..." + lon);
+  });
+  //when run, will fetch localstorage items and append them as buttons in previous searches sections
+  function getLocalStorage() {
+    var KeyName = window.localStorage.key(0);
+    console.log(JSON.parse(window.localStorage.getItem("PastSearches")));
+    if (JSON.parse(localStorage.getItem("PastSearches")) !== null) {
+      pastSearchesArr = pastSearchesArr.concat(
+        JSON.parse(localStorage.getItem("PastSearches"))
+      );
+    }
+    console.log(pastSearchesArr);
+
+    for (let i = 0; i < pastSearchesArr.length; i++) {
+      var createHistoryButton = document.createElement("button");
+      createHistoryButton.type = "submit";
+      createHistoryButton.className = "my-2 col-12 btn btn-primary";
+      createHistoryButton.id = "pastSearchButton";
+      createHistoryButton.value = pastSearchesArr[i].index;
+
+      //want text conetnt to be localstorage,getitem[i].[1]
+
+      createHistoryButton.textContent = pastSearchesArr[i].name;
+
+      document.getElementById("pastSearches").appendChild(createHistoryButton);
+    }
+  }
+  //on page load, runs this functions
+  getLocalStorage();
 
   // listners for click on lets go button and opens new tap with directions to selected waypoint
   $("#letsGoBtn").on("click", function (e) {
     //checks if no park was selected, if so,
     //prevents default refresh and presents error modal
 
-    if (selectedParkName.length === 0) {
+    if (selectedParkName == null) {
       e.preventDefault();
       $("#exampleModal").modal("show");
       console.log("hello");
@@ -86,13 +161,14 @@ $(document).ready(function () {
       //them goes to new page
       //displays directions to park using waze api
     } else {
+      console.log(lat + lon);
       $(this).attr("target", "_blank");
       $(this).attr(
         "href",
         "https://www.waze.com/ul?ll=" +
           lat +
           "%2C" +
-          long +
+          lon +
           "&navigate=yes&zoom=17"
       );
     }
