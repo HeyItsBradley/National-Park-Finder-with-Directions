@@ -14,7 +14,7 @@ body {
 }
 
 #parkCard {
-  background-color: rgba(255, 255, 255, 0.486);
+  background-color: rgba(255, 255, 255, 0.65);
   border-radius: 5%;
 }
 
@@ -23,10 +23,30 @@ aside div button {
 }
 
 .navbar {
-  background-color: rgba(255, 255, 255, 0.555);
+  background-color: rgba(255, 255, 255, 0.65);
 }
 
 .dropdown-menu {
   overflow-y: scroll;
   max-height: 10vw;
 }
+
+#card-title-id{
+  font-size: 2em;
+}
+
+p{
+  font-size: 1.25em;
+  color:black;
+  font-weight:500;
+}
+
+.form-control{
+  background-color:rgba(255, 255, 255, 0.65);
+}
+
+#button-color, #letsGoBtn{
+  background-color: rgba(119, 54, 24, 0.644);
+  border-color:rgba(255, 255, 255, 0.65)
+}
+
