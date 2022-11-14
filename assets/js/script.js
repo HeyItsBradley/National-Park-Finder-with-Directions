@@ -5,7 +5,7 @@ var parksInState = [];
 var selectedParkName = "";
 var lat = "";
 var long = "";
-
+var pastSearchesArr = [];
 //EVENT LISTNERS
 
 $(document).ready(function () {
@@ -68,6 +68,20 @@ $(document).ready(function () {
           //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
           lat = data.data[parkIndex].latitude;
           long = data.data[parkIndex].longitude;
+          pastSearchesArr.push(selectedParkName);
+
+          localStorage.setItem("PastSearches", JSON.stringify(pastSearchesArr));
+
+          var createHistoryButton = document.createElement("button");
+          createHistoryButton.type = "submit";
+          createHistoryButton.className =
+            "my-2 col-12 btn btn-primary" + selectedParkName;
+          createHistoryButton.id = "pastSearchButton";
+          createHistoryButton.textContent = selectedParkName;
+
+          document
+            .getElementById("pastSearches")
+            .appendChild(createHistoryButton);
         });
       });
   });
