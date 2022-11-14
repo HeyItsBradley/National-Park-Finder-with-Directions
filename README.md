@@ -15,15 +15,15 @@ Then there is a link to find directions to that park.
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-- What was your motivation?
-  - The ability to go to one page and see all National Parks in your own state.
-  - Directions already to location easily accessible for getting there.
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")  
-   -create a site for accessibility to parks with ways to get there faster.
-- What problem does it solve?  
-   -It stops users from having to deploy multiple tabs for one task.
-- What did you learn?  
-   -how to pull data from api and call data within the array.
+- What was your motivation?  
+  -The ability to go to one page and see all National Parks in your own state.  
+  -Directions already to location easily accessible for getting there.  
+- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")    
+  -create a site for accessibility to parks with ways to get there faster.  
+- What problem does it solve?    
+  -It stops users from having to deploy multiple tabs for one task.  
+- What did you learn?    
+  -how to pull data from api and call data within the array.  
 
 ## Installation
 
@@ -31,7 +31,7 @@ To run installation, click on live link in readme or github profile to deploy pa
 
 ## Usage
 
-![Alt text](assets/screencapture-heyitsbradley-github-io-National-Park-Finder-with-Directions-2022-11-14-09_50_21.png)
+![Alt text](../../../../../../C:/Users/12149/Desktop/Bootcamp/Park-Finder-with-Directions/assets/live-deployed-page.png)
 
 https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
 
