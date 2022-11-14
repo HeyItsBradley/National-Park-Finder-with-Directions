@@ -6,11 +6,10 @@ As an avid national park goer, I want to to be able to select a state I desire t
 
 ## Acceptance Criteria for deployed page
 
-*GIVEN when I'm able to select the state I want to travel in.  
-*Then I am presented with a list of parks in that state.  
-*THEN I'm able to select the park I want to go too.  
-*Given there is a link to find directions to that park.  
-\*Then I am presented with directions to the chosen park.
+Given when I'm able to select the state I want to travel in.  
+Then I am presented with a list of parks in that state.  
+When I'm able to select the park I want to go too.  
+Then there is a link to find directions to that park.
 
 ## Technical criteria
 
@@ -19,7 +18,7 @@ As an avid national park goer, I want to to be able to select a state I desire t
 -Accept and respond to user input  
 -Use at least two server-side APIs  
 -use client side storage to store persistent data  
--must use modals not (JS alers, prompts or confirms)
+-must use modals not (JS alerts, prompts or confirms)
 -must add project to your portfolio already created
 
 ## Presentation Requirements
@@ -47,7 +46,7 @@ Provide a short description explaining the what, why, and how of your project. U
 - What problem does it solve?  
    -It stops users from having to deploy multiple tabs for one task.
 - What did you learn?  
-   -will fill in once we collaborate and PSUEDO code to get a starting point.
+   -how to pull data from api and call data within the array.
 
 ## Installation
 
@@ -55,12 +54,16 @@ What are the steps required to install your project? Provide a step-by-step desc
 
 ## Usage
 
-    Will add photo of deployed site
-    will add link to deployed site
+![Alt text](assets/screencapture-heyitsbradley-github-io-National-Park-Finder-with-Directions-2022-11-14-09_50_21.png)
+
+    https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
 
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
+https://github.com/cbaird21  
+https://github.com/danieldwoodward
+https://github.com/matburkley
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
