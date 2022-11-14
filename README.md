@@ -11,35 +11,12 @@ Then I am presented with a list of parks in that state.
 When I'm able to select the park I want to go too.  
 Then there is a link to find directions to that park.
 
-## Technical criteria
-
--Use CSS Bootstrap  
--Deployed on GitHub Pages  
--Accept and respond to user input  
--Use at least two server-side APIs  
--use client side storage to store persistent data  
--must use modals not (JS alerts, prompts or confirms)
--must add project to your portfolio already created
-
-## Presentation Requirements
-
--one minute elevator pitch of description of web site
--motivation for the project?
--what is your user story?
--process:
--what technologies used
--tasks and roles broken down and assigned
--Challenges encountered?
--demo the project
--directions for future development of the app
--link to deployed application and GitHub repo
-
 ## Description
 
 Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 
-- What was your motivation?  
-   -- The ability to go to one page and see all National Parks in your own state.
+- What was your motivation?
+  - The ability to go to one page and see all National Parks in your own state.
   - Directions already to location easily accessible for getting there.
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")  
    -create a site for accessibility to parks with ways to get there faster.
@@ -50,27 +27,44 @@ Provide a short description explaining the what, why, and how of your project. U
 
 ## Installation
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To run installation, click on live link in readme or github profile to deploy page.
 
 ## Usage
 
 ![Alt text](assets/screencapture-heyitsbradley-github-io-National-Park-Finder-with-Directions-2022-11-14-09_50_21.png)
 
-    https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
+https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
 
 ## Credits
 
 List your collaborators, if any, with links to their GitHub profiles.
-https://github.com/cbaird21  
+
+https://github.com/HeyItsBradley
+
+https://github.com/cbaird21
+
 https://github.com/danieldwoodward
+
 https://github.com/matburkley
 
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-If you followed tutorials, include links to those here as well.
+https://www.nps.gov/subjects/developer/api-documentation.htm#/
+
+https://developers.google.com/waze/deeplinks
 
 ## License
 
 Please refer to LICENSE.
 
 ---
+
+## Technical criteria
+
+-Use CSS Bootstrap  
+-Deployed on GitHub Pages  
+-Accept and respond to user input  
+-Use at least two server-side APIs  
+-use client side storage to store persistent data  
+-must use modals not (JS alerts, prompts or confirms)
+-must add project to your portfolio already created

@@ -50,3 +50,16 @@ What do we want our app to do?
 
           // pulled the index to meet the park code
           var parkCode = allParkCodes[parkIndex];
+
+          ## Presentation Requirements
+
+-one minute elevator pitch of description of web site
+-motivation for the project?
+-what is your user story?
+-process:
+-what technologies used
+-tasks and roles broken down and assigned
+-Challenges encountered?
+-demo the project
+-directions for future development of the app
+-link to deployed application and GitHub repo
