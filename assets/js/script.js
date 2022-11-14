@@ -85,8 +85,73 @@ $(document).ready(function () {
         });
       });
   });
+  //this will run when a past search is clicked on and fetch and append the info
+  function handleHistoryClick() {
+    console.log("click is working");
+    //delete all lis in select park ul
+    $("#parkUl").empty();
 
-  // $(document).on("click", "pastSearchButton", [insert function name here])
+    //state input field gets set to clicked state
+    $("#stateInput").val($(this).text());
+    console.log($(this).text());
+    //store selected state name in var
+    var selectedState = $(this).text();
+    //fetching data on the selected state using API call
+    fetch(
+      "https://developer.nps.gov/api/v1/parks?&stateCode=" +
+        selectedState +
+        "&api_key=b295jCwiBszLNsrrMo1lhHZLgvlqvNzbudqN6gHc"
+    )
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+        //for loop to create new li elements for the parks dropdown menu
+        for (var i = 0; i < data.total; i++) {
+          //declaring variables for createing elements
+          var createLi = document.createElement("li");
+          var createA = document.createElement("a");
+          var selectPark = document.getElementById("parkUl");
+          createA.setAttribute("class", "dropdown-item");
+          createA.setAttribute("href", "#");
+          createA.setAttribute("id", "parkIndex" + [i]);
+          //setting text content and appending
+          createA.textContent = data.data[i].name;
+          createLi.appendChild(createA);
+          selectPark.appendChild(createLi);
+          //pushing park code and parks into an array
+          allParkCodes.push(data.data[i].parkCode);
+          parksInState.push(data.data[i].name);
+        }
+        //when user clicks on a park then
+        $(".selectPark a").on("click", function () {
+          //park input fields becomes selected park
+          $("#parkInput").val($(this).text());
+          //create var parktext to be set to the park name
+          var parkText = this.id;
+          //selected park name gets set to clicked on text
+          selectedParkName = $(this).text();
+          //updates card title to become selected park
+          $(".card-title").text(selectedParkName);
+
+          // Pulls out number in a string, the index
+          var parkIndex = parkText.replace(/\D/g, "");
+          //card text gets set to describtion of selected park
+          $(".card-text").text(data.data[parkIndex].description);
+          //We are creating a variable to denote the relative path to the image url and dynamically inserted it to our src variable
+          var cardImg = data.data[parkIndex].images[0].url;
+          //card image gets set to selcted parks image
+          $(".cardImage").attr("src", cardImg);
+          //Pulled variable from global and gave it a value of the latitude and longitude of the selected park
+          lat = data.data[parkIndex].latitude;
+          long = data.data[parkIndex].longitude;
+        });
+      });
+  }
+  //Listeners for clicks on previous search buttons
+  $(document).on("click", "#pastSearchButton", handleHistoryClick);
+//when run, will fetch localstorage items and append them as buttons in previous searches sections
   function getLocalStorage() {
     if (JSON.parse(localStorage.getItem("PastSearches")) !== null) {
       pastSearchesArr = pastSearchesArr.concat(
@@ -105,7 +170,7 @@ $(document).ready(function () {
       document.getElementById("pastSearches").appendChild(createHistoryButton);
     }
   }
-
+//on page load, runs this functions
   getLocalStorage();
 
   // listners for click on lets go button and opens new tap with directions to selected waypoint
