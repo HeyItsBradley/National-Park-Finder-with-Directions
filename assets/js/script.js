@@ -86,6 +86,28 @@ $(document).ready(function () {
       });
   });
 
+  // $(document).on("click", "pastSearchButton", [insert function name here])
+  function getLocalStorage() {
+    if (JSON.parse(localStorage.getItem("PastSearches")) !== null) {
+      pastSearchesArr = pastSearchesArr.concat(
+        JSON.parse(localStorage.getItem("PastSearches"))
+      );
+    }
+
+    for (let i = 0; i < pastSearchesArr.length; i++) {
+      var createHistoryButton = document.createElement("button");
+      createHistoryButton.type = "submit";
+      createHistoryButton.className =
+        "my-2 col-12 btn btn-primary" + pastSearchesArr[i];
+      createHistoryButton.id = "pastSearchButton";
+      createHistoryButton.textContent = pastSearchesArr[i];
+
+      document.getElementById("pastSearches").appendChild(createHistoryButton);
+    }
+  }
+
+  getLocalStorage();
+
   // listners for click on lets go button and opens new tap with directions to selected waypoint
   $("#letsGoBtn").on("click", function (e) {
     //checks if no park was selected, if so,
