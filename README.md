@@ -31,7 +31,7 @@ To run installation, click on live link in readme or github profile to deploy pa
 
 ## Usage
 
-![Alt text](assets/screencapture-heyitsbradley-github-io-National-Park-Finder-with-Directions-2022-11-14-09_50_21.png)
+![Alt text](./assets/live-deployed-page.png)
 
 https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
 
