@@ -31,7 +31,7 @@ To run installation, click on live link in readme or github profile to deploy pa
 
 ## Usage
 
-![Alt text](../../../../../../C:/Users/12149/Desktop/Bootcamp/Park-Finder-with-Directions/assets/live-deployed-page.png)
+![Alt text](./assets/live-deployed-page.png)
 
 https://heyitsbradley.github.io/National-Park-Finder-with-Directions/
 
@@ -68,3 +68,5 @@ Please refer to LICENSE.
 -use client side storage to store persistent data  
 -must use modals not (JS alerts, prompts or confirms)
 -must add project to your portfolio already created
+
+[def]: ./assets/live-deployed-page.png
