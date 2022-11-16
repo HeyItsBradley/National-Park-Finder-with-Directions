@@ -17,13 +17,13 @@ Provide a short description explaining the what, why, and how of your project. U
 
 - What was your motivation?  
   -The ability to go to one page and see all National Parks in your own state.  
-  -Directions already to location easily accessible for getting there.  
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")    
-  -create a site for accessibility to parks with ways to get there faster.  
-- What problem does it solve?    
-  -It stops users from having to deploy multiple tabs for one task.  
-- What did you learn?    
-  -how to pull data from api and call data within the array.  
+  -Directions already to location easily accessible for getting there.
+- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")  
+  -create a site for accessibility to parks with ways to get there faster.
+- What problem does it solve?  
+  -It stops users from having to deploy multiple tabs for one task.
+- What did you learn?  
+  -how to pull data from api and call data within the array.
 
 ## Installation
 
